@@ -4,7 +4,7 @@ const fetch = require('node-fetch'),
 		return fetch('https://sochain.com/api/v2/get_price/DOGE/USD')
 			.then(res => res.json())
 			.then((json) => {
-				return json.data.prices.find(x => x.price_base == 'USD').price;
+				return json.data.prices[0].price
 			});
 	},
 	updateBio = (bio) => {
